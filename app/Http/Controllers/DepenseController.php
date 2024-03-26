@@ -75,11 +75,11 @@ public function index()
             ]);
 
             return response()->json([
-                "message" => "expenses retrieved successfully",
+                "message" => "expenses created successfully",
                 "expenses" => $expense
-            ]);
+            ],201);
         }catch(\Exception $e){
-            return response()->json(["message" => "store  expense wrong", $e->getMessage()],500);
+            return response()->json(["message" => "Failed to create expense", $e->getMessage()],500);
         }
     }
 
